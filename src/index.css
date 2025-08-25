@@ -2,64 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AGI Studios Design System - Dark theme with purple/blue accents */
+/* AGI Studios Design System - Vercel-inspired black/white theme */
 
 @layer base {
   :root {
-    /* Dark theme colors */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Vercel-inspired dark theme */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 263 70% 65%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 217 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --accent: 263 70% 65%;
-    --accent-foreground: 222 84% 4.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 32.6% 17.5%;
-    --input: 217 32.6% 17.5%;
-    --ring: 263 70% 65%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
 
     --radius: 0.75rem;
 
-    /* AGI Studios Brand Colors */
-    --brand-purple: 263 70% 65%;
-    --brand-blue: 217 91% 60%;
-    --brand-gradient: linear-gradient(135deg, hsl(263 70% 65%), hsl(217 91% 60%));
-    --brand-gradient-subtle: linear-gradient(135deg, hsl(263 70% 65% / 0.1), hsl(217 91% 60% / 0.1));
+    /* Vercel-inspired colors */
+    --brand-primary: 0 0% 100%;
+    --brand-secondary: 0 0% 63.9%;
+    --brand-accent: 0 0% 14.9%;
     
     /* Surface colors */
-    --surface: 222 84% 4.9%;
-    --surface-elevated: 217 32.6% 17.5%;
-    --surface-hover: 217 32.6% 22%;
+    --surface: 0 0% 0%;
+    --surface-elevated: 0 0% 3.9%;
+    --surface-hover: 0 0% 8%;
     
     /* Text hierarchy */
-    --text-primary: 210 40% 98%;
-    --text-secondary: 215 20.2% 65.1%;
-    --text-tertiary: 215 16.3% 46.9%;
+    --text-primary: 0 0% 100%;
+    --text-secondary: 0 0% 63.9%;
+    --text-tertiary: 0 0% 45%;
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--brand-purple) / 0.3);
-    --shadow-elegant: 0 25px 50px -12px hsl(222 84% 4.9% / 0.8);
+    --shadow-glow: 0 0 40px hsl(0 0% 100% / 0.1);
+    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
 
     --sidebar-background: 0 0% 98%;
 
@@ -124,31 +123,46 @@
 
   body {
     @apply bg-background text-foreground font-geist antialiased;
-    background: radial-gradient(ellipse 80% 80% at 50% -20%, hsl(var(--brand-purple) / 0.15), transparent);
+    background: #000;
   }
 }
 
 @layer components {
-  /* Hero button variant */
+  /* Vercel-inspired button variants */
+  .btn-vercel {
+    @apply relative inline-flex items-center justify-center px-6 py-2.5 font-medium 
+           transition-all duration-200 rounded-full
+           bg-white text-black border border-white
+           hover:bg-white/80 hover:border-white/80
+           active:scale-95;
+  }
+  
   .btn-hero {
-    @apply relative inline-flex items-center justify-center px-8 py-4 overflow-hidden 
-           font-medium transition-all duration-300 rounded-xl
-           bg-gradient-to-r from-purple-600 to-blue-600 
-           hover:shadow-lg hover:shadow-purple-500/25 
-           hover:scale-105 active:scale-95
-           text-white border-0;
+    @apply relative inline-flex items-center justify-center px-8 py-4 font-medium 
+           transition-all duration-200 rounded-full
+           bg-white text-black border border-white
+           hover:bg-white/80 hover:border-white/80 hover:scale-[1.02]
+           active:scale-95;
+  }
+  
+  /* Navigation links */
+  .nav-link {
+    @apply text-white/70 hover:text-white transition-colors duration-200 
+           relative after:content-[''] after:absolute after:w-0 after:h-0.5 
+           after:bottom-[-4px] after:left-0 after:bg-white after:transition-all 
+           after:duration-200 hover:after:w-full;
   }
   
   /* Card hover effects */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 
-           hover:-translate-y-2 hover:bg-surface-hover border border-border
-           bg-surface-elevated backdrop-blur-sm;
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-white/5 
+           hover:-translate-y-1 hover:bg-surface-hover border border-border/50
+           bg-surface-elevated backdrop-blur-sm rounded-2xl;
   }
   
-  /* Text gradients */
+  /* Text gradients - updated for white theme */
   .text-gradient {
-    @apply bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent;
+    @apply text-white;
   }
   
   /* Smooth fade-in animation */
