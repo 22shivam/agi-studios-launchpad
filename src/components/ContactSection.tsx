@@ -1,54 +1,64 @@
 import { Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:shivam@agistudios.co';
+  };
+
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in">
-            Get in <span className="text-gradient">Touch</span>
+            Get in Touch
           </h2>
-          <p className="text-xl text-text-secondary fade-in fade-in-delay-1">
-            Ready to discuss your AI project or explore partnership opportunities?
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto fade-in fade-in-delay-1">
+            Ready to transform your business with AI? Let's discuss how we can help you innovate and scale.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="card-hover p-8 rounded-2xl group fade-in fade-in-delay-2">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-                <Mail className="h-6 w-6 text-white" />
+        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="card-hover group fade-in fade-in-delay-2">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                <Mail className="h-6 w-6 text-orange-500" />
               </div>
-              <h3 className="text-xl font-semibold">Email</h3>
+              <div>
+                <h3 className="text-xl font-bold group-hover:text-orange-500 transition-colors">Email</h3>
+                <p className="text-text-secondary">Get in touch directly</p>
+              </div>
             </div>
-            <a 
-              href="mailto:shivam@agistudios.co"
-              className="text-lg text-text-secondary hover:text-gradient transition-colors"
+            <button 
+              onClick={handleEmailClick}
+              className="text-orange-500 hover:text-orange-600 font-semibold transition-colors"
             >
               shivam@agistudios.co
-            </a>
+            </button>
           </div>
           
-          <div className="card-hover p-8 rounded-2xl group fade-in fade-in-delay-3">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-4">
-                <MapPin className="h-6 w-6 text-white" />
+          <div className="card-hover group fade-in fade-in-delay-3">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-blue-500" />
               </div>
-              <h3 className="text-xl font-semibold">Location</h3>
+              <div>
+                <h3 className="text-xl font-bold group-hover:text-blue-500 transition-colors">Location</h3>
+                <p className="text-text-secondary">Based in Indiana</p>
+              </div>
             </div>
-            <p className="text-lg text-text-secondary">
+            <p className="text-text-secondary">
               Bloomington, Indiana
             </p>
           </div>
         </div>
         
         <div className="text-center mt-12">
-          <a 
-            href="mailto:shivam@agistudios.co"
-            className="btn-hero fade-in fade-in-delay-4"
+          <button 
+            onClick={handleEmailClick}
+            className="btn-primary fade-in fade-in-delay-4"
           >
             Start a Conversation
-          </a>
+          </button>
         </div>
       </div>
     </section>

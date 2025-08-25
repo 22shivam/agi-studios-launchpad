@@ -11,13 +11,13 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 border-t border-border/20">
+    <section id="clients" className="py-24 px-6 bg-surface-elevated">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 fade-in">
-            Trusted by <span className="text-gradient">Leading Teams</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in">
+            Trusted by Leading Teams
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto fade-in fade-in-delay-1">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto fade-in fade-in-delay-1">
             We partner with innovative companies to build the future of AI-driven technology.
           </p>
         </div>
@@ -29,10 +29,10 @@ const ClientsSection = () => {
               href={client.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`block card-hover p-8 rounded-2xl group fade-in fade-in-delay-${index + 2} transition-all duration-300`}
+              className={`block card-hover group fade-in fade-in-delay-${index + 2} transition-all duration-300`}
             >
-              <div className="flex items-center gap-6 mb-4">
-                <div className="w-16 h-16 rounded-xl overflow-hidden bg-surface-elevated flex-shrink-0">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white flex-shrink-0 border border-border">
                   <img 
                     src={client.logo} 
                     alt={`${client.name} logo`}
@@ -40,7 +40,7 @@ const ClientsSection = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold group-hover:text-gradient transition-colors">
+                  <h3 className="text-2xl font-bold group-hover:text-orange-500 transition-colors mb-2">
                     {client.name}
                   </h3>
                   <p className="text-text-secondary leading-relaxed">

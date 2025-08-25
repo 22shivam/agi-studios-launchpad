@@ -1,50 +1,51 @@
-import { Zap, Code, FlaskConical } from "lucide-react";
+import { Bot, Server, Lightbulb } from "lucide-react";
 
 const ProductsSection = () => {
   const products = [
     {
-      icon: Zap,
+      icon: <Bot className="h-12 w-12 text-orange-500" />,
       title: "AI SaaS Applications",
-      description: "Tools that make AI accessible to creators and businesses, enabling rapid development and deployment of intelligent solutions.",
-      gradient: "from-purple-600 to-purple-800"
+      description: "Tools that make AI accessible to creators and businesses, enabling automation and intelligent decision-making.",
+      color: "orange"
     },
     {
-      icon: Code,
-      title: "Developer Infrastructure",
-      description: "Scalable backend and cloud-native systems designed for modern development workflows and enterprise requirements.",
-      gradient: "from-blue-600 to-blue-800"
+      icon: <Server className="h-12 w-12 text-blue-500" />,
+      title: "Developer Infrastructure", 
+      description: "Scalable backend and cloud-native systems designed for modern applications and AI workloads.",
+      color: "blue"
     },
     {
-      icon: FlaskConical,
+      icon: <Lightbulb className="h-12 w-12 text-yellow-500" />,
       title: "Research & Experimentation",
-      description: "Applying frontier AI models to real-world problems, pushing the boundaries of what's possible with artificial intelligence.",
-      gradient: "from-purple-600 to-blue-600"
+      description: "Applying frontier AI models to real-world problems and pushing the boundaries of what's possible.",
+      color: "yellow"
     }
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section id="products" className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in">
-            Our <span className="text-gradient">Focus Areas</span>
+            Our Focus Areas
           </h2>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto fade-in fade-in-delay-1">
-            We build across the full spectrum of AI-driven technology, from user-facing applications to foundational infrastructure.
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto fade-in fade-in-delay-1">
+            We specialize in building AI-driven solutions across three key areas of innovation.
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((product, index) => (
-            <div key={index} className={`card-hover p-8 rounded-2xl group fade-in fade-in-delay-${index + 2}`}>
-              <div className={`w-16 h-16 bg-gradient-to-r ${product.gradient} rounded-xl mb-6 flex items-center justify-center transition-transform group-hover:scale-110`}>
-                <product.icon className="h-8 w-8 text-white" />
+            <div
+              key={index}
+              className={`card-hover fade-in fade-in-delay-${index + 2} group cursor-pointer`}
+            >
+              <div className="mb-6">
+                {product.icon}
               </div>
-              
-              <h3 className="text-xl font-semibold mb-4 group-hover:text-gradient transition-colors">
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-orange-500 transition-colors">
                 {product.title}
               </h3>
-              
               <p className="text-text-secondary leading-relaxed">
                 {product.description}
               </p>

@@ -1,18 +1,17 @@
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12 px-6">
+    <footer className="py-12 px-6 bg-surface-elevated border-t border-border">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold text-gradient">AGI Studios</h3>
-            <p className="text-text-secondary mt-2">Building the future with AI</p>
+        <div className="text-center">
+          <div className="mb-4">
+            <h3 className="text-2xl font-bold text-text-primary">AGI Studios</h3>
           </div>
-          
-          <div className="text-center md:text-right">
-            <p className="text-text-tertiary">
-              © {new Date().getFullYear()} AGI Labs LLC. All rights reserved.
-            </p>
-          </div>
+          <p className="text-text-secondary mb-6">
+            Building the future of AI-driven technology
+          </p>
+          <p className="text-sm text-text-tertiary">
+            © {new Date().getFullYear()} AGI Labs LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
