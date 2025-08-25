@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +64,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'brand-purple': 'hsl(var(--brand-purple))',
+				'brand-blue': 'hsl(var(--brand-blue))',
+				'surface': 'hsl(var(--surface))',
+				'surface-elevated': 'hsl(var(--surface-elevated))',
+				'surface-hover': 'hsl(var(--surface-hover))',
+				'text-primary': 'hsl(var(--text-primary))',
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'text-tertiary': 'hsl(var(--text-tertiary))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
